@@ -262,3 +262,15 @@ mappings:
     labels:
       airflow_id: "$1"
       dag_id: "$2"
+  - match: "*.dag.*.*.queued_duration"
+    match_metric_type: observer
+    name: "af_agg_dag_task_queued_duration"
+    labels:
+      airflow_id: "$1"
+      dag_id: "$2"
+      task_id: "$3"
+  - match: "*.scheduler.scheduler_loop_duration"
+    match_metric_type: observer
+    name: "af_agg_scheduler_loop_duration"
+    labels:
+      airflow_id: "$1"
